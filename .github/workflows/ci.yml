@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        run: ./scripts/setup.sh
+      - name: Demo overview
+        run: ./scripts/run_all.sh
